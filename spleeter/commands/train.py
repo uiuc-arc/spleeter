@@ -38,7 +38,7 @@ def _create_estimator(params):
         params=params,
         config=tf.estimator.RunConfig(
             save_checkpoints_steps=params['save_checkpoints_steps'],
-            tf_random_seed=params['random_seed'],
+            #tf_random_seed=params['random_seed'],
             save_summary_steps=params['save_summary_steps'],
             session_config=session_config,
             log_step_count_steps=10,

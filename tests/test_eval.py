@@ -64,7 +64,7 @@ def generate_fake_eval_dataset(path):
     fs = 44100
     duration = 3
     n_channels = 2
-    rng = np.random.RandomState(seed=0)
+    rng = np.random.RandomState()
     for song in range(n_songs):
         song_path = join(path, "test", f"song{song}")
         makedirs(song_path, exist_ok=True)

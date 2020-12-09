@@ -46,7 +46,7 @@ TRAIN_CONFIG = {
     "throttle_secs":20,
     "save_checkpoints_steps":100,
     "save_summary_steps":5,
-    "random_seed":0,
+#    "random_seed":0,
     "model":{
         "type":"unet.unet",
         "params":{
@@ -68,7 +68,7 @@ def generate_fake_training_dataset(path, instrument_list=["vocals", "other"]):
     fs = 44100
     duration = 6
     n_channels = 2
-    rng = np.random.RandomState(seed=0)
+    rng = np.random.RandomState()
     dataset_df = pd.DataFrame(columns=["mix_path"]+[f"{instr}_path" for instr in instrument_list]+["duration"])
     for song in range(n_songs):
         song_path = join(path, "train", f"song{song}")
